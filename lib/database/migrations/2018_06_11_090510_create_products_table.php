@@ -26,7 +26,7 @@ class CreateProductsTable extends Migration
                     ->references('cate_id')
                     ->on('categorys')
                     ->onDelete('cascade');
-            $table->integer('prod_thumbnail');
+            $table->string('prod_thumbnail',255);
             $table->string('prod_type',255);
             $table->string('prod_status',255);
             $table->integer('prod_parent');

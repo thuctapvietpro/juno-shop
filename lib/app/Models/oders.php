@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class oders extends Model
+class Oders extends Model
 {
     //
 }

@@ -17,11 +17,11 @@ class CreateAccountsTable extends Migration
             $table->increments('user_id');
             $table->string('user_name',255);
             $table->string('user_email',255);
-            $table->string('user_pass',255);
+            $table->string('password',255);
             $table->string('user_avatar',255);
             $table->string('user_phone',255); 
             $table->integer('user_role');
-            $table->string('remember_token',100); 
+            $table->rememberToken(); 
             $table->timestamps();
         });
     }
