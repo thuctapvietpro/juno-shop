@@ -48,7 +48,20 @@ class AttributeController extends Controller
         //dd($value);
     } 
     public function postEditAttribute(EditAttributeRequest $request,$id){
-       $attribute = Attribute::find($id);
+        $attribute = Attribute::find($id);
+        $attribute->att_name = $request->ten_tt;
+        $attribute->att_slug = str_slug($request->ten_tt);
+        $attribute->save();    
+
+       if(isset($request->name_id)){
+            for($i=0;$i<count($request->name_id);$i++){
+                $attvalue = new AttributeValue;
+                $arr['att_value']=$request->name_id[$i];
+                $attvalue::where('att_value_id',$request->idatt[$i])->update($arr);
+
+            }
+        }
+
        if(isset($request->gt_moi)){
         $arr = explode(",",$request->gt_moi);
         foreach ($arr as $key => $value) { 

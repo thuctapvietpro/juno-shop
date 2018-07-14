@@ -32,12 +32,13 @@
                             <div class="form-group">
                                 <label>Giá trị</label>
                                     @foreach ($attlist as $attvalue)
-                                        <input class="form-control" type="text" required="" name="{" value="{{ $attvalue->att_value }}">
+                                        <input class="form-control" type="hidden" required="" name="idatt[]" value="{{ $attvalue->att_value_id }}">
+                                        <input class="form-control" type="text" required="" name="name_id[]" value="{{ $attvalue->att_value }}">
                                     @endforeach
                             </div>
                             <div class="form-group">
                                 <label>Giá trị mới</label>
-                                <input class="form-control" type="text" required="" name="gt_moi"
+                                <input class="form-control" type="text" name="gt_moi"
                                 value="">
                             </div>                                   
                            <button type="submit" class="btn btn-primary" name="submit">Sửa</button>
