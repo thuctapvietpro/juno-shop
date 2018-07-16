@@ -111,17 +111,17 @@
         </li>
 
         <li class="parent ">
-            <a href="#">
+            <a href="{{ asset('admin/bill') }}">
                 <span data-toggle="collapse" href="#sub-item-5"><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> Quản lý đơn hàng
             </a>
-            <ul class="children collapse" id="sub-item-5">
+            {{-- <ul class="children collapse" id="sub-item-5">
                 <li>
                     <a class="" href="#">
                         <svg class="glyph stroked plus sign"><use xlink:href="#stroked-plus-sign"/></svg> Thêm mới
                     </a>
                 </li>
 
-            </ul>			
+            </ul>	 --}}		
         </li> 
 
         {{-- <li><a href="#"><svg class="glyph stroked gear"><use xlink:href="#stroked-gear"/></svg> Cấu hình</a></li> --}}

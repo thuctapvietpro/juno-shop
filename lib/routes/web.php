@@ -69,5 +69,13 @@ Route::group(['namespace'=>'Admin'],function(){
 			Route::get('delete/{id}','AttributeController@getDeleteAttribute');
 			Route::get('deletevalue/{id}','AttributeController@getDeleteAttValue');
 		});
+		// Đơn hàng --Bills
+		Route::group(['prefix'=>'bill'],function(){
+			Route::get('','BillController@getBill');
+
+			Route::get('edit/{id}','BillController@getEditBill');
+
+			Route::get('delete/{id}','BillController@getDeleteBill');
+		});
 	});
 });
