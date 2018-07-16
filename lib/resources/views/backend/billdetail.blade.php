@@ -1,3 +1,4 @@
+
 @extends('backend.master')
 @section('title','Chi tiết đơn hàng')
 @section('main')
@@ -73,7 +74,8 @@
                                                 <th class="sorting col-md-2">Ảnh sản phẩm</th>
                                                 <th class="sorting col-md-1">Số lượng</th>
                                                 <th class="sorting col-md-1">Thời gian</th>
-                                                <th class="sorting col-md-2">Giá tiền</th>
+                                                <th class="sorting col-md-1">Giá tiền</th>
+                                                <th class="sorting col-md-2">Tổng tiền</th>
                                             </thead>
                                             <tbody>
                                                 @foreach($prodlist as $key => $product)
@@ -84,14 +86,9 @@
                                                     <td>{{ $product->qty }}</td>
                                                     <td>{{ $product->created_at }}</td>
                                                     <td>{{ number_format($product->price) }} VNĐ</td>
+                                                    <td>{{ number_format($product->total) }} VNĐ</td>
                                                 </tr>
                                                 @endforeach
-                                               {{--  @foreach($oderlist as $order) --}}
-                                                <tr>
-                                                    <td colspan="5"><b>Tổng tiền</b></td>
-                                                    <td colspan="1"><b class="text-red">{{-- {{ number_format($oders->bill_total) }} --}} VNĐ</b></td>
-                                                </tr>
-                                               {{--  @endforeach --}}
                                             </tbody>
                                         </table>
                                     </div>
